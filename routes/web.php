@@ -37,8 +37,20 @@ Route::middleware(['auth', 'verified'])->group(function() {
         Route::get('timetable', [\App\Http\Controllers\Student\TimetableController::class, 'index'])
         ->name('timetable');
 
-        Route::get('something', [\App\Http\Controllers\Student\TimetableController::class, 'index'])
-        ->name('something');
+        // Route::get('something', [\App\Http\Controllers\Student\TimetableController::class, 'index'])
+        // ->name('something');
+
+    });
+
+    Route::prefix('teacher')
+        ->name('teacher.')
+        ->group(function() {
+
+        Route::get('timetable', [\App\Http\Controllers\Teacher\TimetableController::class, 'index'])
+        ->name('timetable');
+
+        // Route::get('something', [\App\Http\Controllers\Student\TimetableController::class, 'index'])
+        // ->name('something');
 
     });
 
